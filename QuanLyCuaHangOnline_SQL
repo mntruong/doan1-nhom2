@@ -1,0 +1,127 @@
+USE QuanLyCuaHangOnline;
+GO
+
+-- Bảng Nhân Viên 
+CREATE TABLE NhanVien (
+    Ma_nv VARCHAR(20) PRIMARY KEY,
+    Ten_nv NVARCHAR(50),
+    Bang_luong DECIMAL(15,2),
+    SDT NVARCHAR(50),
+    Dia_chi NVARCHAR(100),
+    Ngay_cong DATE
+);
+
+-- Bảng Kho Hàng
+CREATE TABLE HangHoa (
+    Ma_kho VARCHAR(20) PRIMARY KEY,
+    Ma_nv VARCHAR(20),
+    Ten_kho NVARCHAR(50),
+    So_luong INT,
+    Ton_kho INT,
+    Thieu INT,
+    CONSTRAINT FK_HangHoa_NhanVien FOREIGN KEY (Ma_nv) REFERENCES NhanVien(Ma_nv)
+);
+
+-- Bảng Khách Hàng
+CREATE TABLE KhachHang (
+    Ma_kh VARCHAR(20) PRIMARY KEY,
+    Ten_kh NVARCHAR(50),
+    Gioi_tinh NVARCHAR(10),
+    Tuoi NVARCHAR(10),
+    HTTT NVARCHAR(50),
+    SDT NVARCHAR(20),
+    Dia_chi NVARCHAR(100),
+    Ngay_giao DATE,
+    Noi_giao NVARCHAR(100)
+);
+
+-- Bảng Sản Phẩm
+CREATE TABLE SanPham (
+    Ma_sp VARCHAR(20) PRIMARY KEY,
+    Ten_sp NVARCHAR(50),
+    Gia DECIMAL(10,2),
+    So_luong_sp INT,
+    Mau_sac NVARCHAR(20)
+);
+
+-- Bảng Hóa Đơn Bán Hàng
+CREATE TABLE HoaDonBanHang (
+    Ma_hoa_don_ban VARCHAR(20) PRIMARY KEY,
+    Ma_kh VARCHAR(20),
+    Ma_sp VARCHAR(20),
+    So_luong_sp INT,
+    Tong_tien DECIMAL(15,2),
+    CONSTRAINT FK_HoaDonBanHang_KhachHang FOREIGN KEY (Ma_kh) REFERENCES KhachHang(Ma_kh),
+    CONSTRAINT FK_HoaDonBanHang_SanPham FOREIGN KEY (Ma_sp) REFERENCES SanPham(Ma_sp)
+);
+
+-- Bảng Nhà Cung Cấp
+CREATE TABLE NhaCungCap (
+    Ma_ncc VARCHAR(20) PRIMARY KEY,
+    Ten_ncc NVARCHAR(100),
+    Dia_chi NVARCHAR(100),
+    SDT NVARCHAR(50)
+);
+
+-- Bảng trung gian giữa Sản Phẩm và Nhà Cung Cấp
+CREATE TABLE SanPham_NhaCungCap (
+    Ma_sp VARCHAR(20),
+    Ma_ncc VARCHAR(20),
+    Gia DECIMAL(10,2),
+    PRIMARY KEY (Ma_sp, Ma_ncc),
+    FOREIGN KEY (Ma_sp) REFERENCES SanPham(Ma_sp),
+    FOREIGN KEY (Ma_ncc) REFERENCES NhaCungCap(Ma_ncc)
+);
+
+-- Bảng Hóa Đơn Nhập Hàng
+CREATE TABLE HoaDonNhapHang (
+    Ma_hoa_don_nhap VARCHAR(20) PRIMARY KEY,
+    Ma_ncc VARCHAR(20),
+    Ma_sp VARCHAR(20),
+    So_luong_sp INT,
+    Tong_tien DECIMAL(15,2),
+    CONSTRAINT FK_HoaDonNhapHang_NhaCungCap FOREIGN KEY (Ma_ncc) REFERENCES NhaCungCap(Ma_ncc),
+    CONSTRAINT FK_HoaDonNhapHang_SanPham FOREIGN KEY (Ma_sp) REFERENCES SanPham(Ma_sp)
+);
+
+-- Bảng Phiếu Xuất
+CREATE TABLE PhieuXuat (
+    Ma_px VARCHAR(20) PRIMARY KEY,
+    Ma_nv VARCHAR(20),
+    Ma_sp VARCHAR(20),
+    Ma_kho VARCHAR(20),
+    So_luong INT,
+    Ngay_xuat DATE,
+    CONSTRAINT FK_PhieuXuat_NhanVien FOREIGN KEY (Ma_nv) REFERENCES NhanVien(Ma_nv),
+    CONSTRAINT FK_PhieuXuat_SanPham FOREIGN KEY (Ma_sp) REFERENCES SanPham(Ma_sp),
+    CONSTRAINT FK_PhieuXuat_HangHoa FOREIGN KEY (Ma_kho) REFERENCES HangHoa(Ma_kho)
+);
+
+-- Bảng Phiếu Nhập
+CREATE TABLE PhieuNhap (
+    Ma_pn VARCHAR(20) PRIMARY KEY,
+    Ma_nv VARCHAR(20),
+    Ma_sp VARCHAR(20),
+    Ma_kho VARCHAR(20),
+    So_luong INT,
+    Ngay_nhap DATE,
+    CONSTRAINT FK_PhieuNhap_NhanVien FOREIGN KEY (Ma_nv) REFERENCES NhanVien(Ma_nv),
+    CONSTRAINT FK_PhieuNhap_SanPham FOREIGN KEY (Ma_sp) REFERENCES SanPham(Ma_sp),
+    CONSTRAINT FK_PhieuNhap_HangHoa FOREIGN KEY (Ma_kho) REFERENCES HangHoa(Ma_kho)
+);
+
+-- Bảng Chiến Lược Truyền Thông
+CREATE TABLE ChienLuocTruyenThong (
+    Ma_cltt VARCHAR(20) PRIMARY KEY,
+    Ten_cltt NVARCHAR(100),
+    Ma_nv VARCHAR(20),
+	Ma_sp VARCHAR(20),
+    Kenh_truyen_thong NVARCHAR(100),
+    Noi_dung NVARCHAR(500),
+    Doi_tuong NVARCHAR(100),
+    Tien_chi DECIMAL(15,2),
+    Ngay_trien_khai DATE,
+    Trang_thai NVARCHAR(50),
+    CONSTRAINT FK_ChienLuocTruyenThong_NhanVien FOREIGN KEY (Ma_nv) REFERENCES NhanVien(Ma_nv),
+	CONSTRAINT FK_ChienLuocTruyenThong_SanPham FOREIGN KEY (Ma_sp) REFERENCES SanPham(Ma_sp),
+);
