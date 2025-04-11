@@ -1,0 +1,5 @@
+SELECT TOP (1000) [Masv]
+      ,[Hoten]
+      ,[Gioitinh]
+      ,[Ngaysinh]
+  FROM [QuanLySinhVien].[dbo].[Sinhvien]
