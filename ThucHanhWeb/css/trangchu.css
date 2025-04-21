@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Phần slide chiếm toàn bộ màn hình */
+.slide {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide_1,
+.slide_3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: 1;
+}
+
+.slide_3 {
+    z-index: 3;
+}
+
+.nut {
+    position: absolute;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 999;
+    top: 90%;
+}
+
+.nut ul li {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #FFF;
+    display: inline-block;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.nut ul li:hover {
+    background-color: white;
+}
+
+.ra {
+    transition: 1.5s;
+    opacity: 1;
+}
+
+/* Layout chính chia làm section và aside */
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 10; /* nằm trên slide */
+}
+
+/* Phần nội dung bên trái */
+section {
+    flex: 1;
+    height: 100%;
+    padding: 10px;
+    background-color: #FFF;
+    text-align: center;
+    overflow-y: auto;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    max-height: 390px;
+    object-fit: cover;
+}
+
+/* Danh sách xe */
+div#danhsachxe {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+}
+
+div#danhsachxe > div {
+    width: 23%;
+    height: 215px;
+    text-align: center;
+}
+
+div#danhsachxe > div img {
+    width: 100%;
+    height: 84%;
+    border-radius: 13px;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+div#danhsachxe > div img:hover {
+    transform: scale(1.1);
+    margin-bottom: 10px;
+}
+
+div#danhsachxe > div a {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+div#danhsachxe > div a:hover {
+    color: #dd3818;
+    text-shadow: 1px 1px 1px #f4a565;
+}
+
+/* Phần bên phải */
+aside#right {
+    width: 200px;
+    height: 100%;
+    background-color: #3f3f3f;
+    padding: 10px 5px;
+    overflow-y: auto;
+}
+
+aside#right > div {
+    margin-top: 10px;
+    border: 1px solid #F90;
+    width: 100%;
+}
+
+aside#right > div > p {
+    background: linear-gradient(120deg, #B22222, #1e1e1e, #B22222);
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    height: 30px;
+    padding-top: 10px;
+}
+
+aside#right > div > marquee {
+    height: 260px;
+    width: 100%;
+    text-align: center;
+}
+
+aside#right > div > marquee a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #F90;
+}
+
+aside#right > div > marquee div {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+aside#right > div > marquee div#viencham {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted #F90;
+    border-top: 2px dotted #F90;
+}
+
+.maugia {
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+aside#right > div > marquee img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
