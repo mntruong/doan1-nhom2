@@ -17,7 +17,7 @@ public class ConnectDatabase {
     /**
      * @param args the command line arguments
      */
-    private final Connection conn;
+    public final Connection conn;
 
     public ConnectDatabase()throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.cj.jdbc.Driver");
