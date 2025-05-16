@@ -6,13 +6,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class ChienLuocForm extends JFrame {
+public class QuanLyTruyenThong extends JFrame {
     private JTextField tfMa, tfTenChiTiet, tfMucTieu, tfKenh, tfNganSach, tfNgayBD, tfNgayKT, tfMaNV, tfSearchMaNV;
     private JTable table;
     private DefaultTableModel model;
     private Connection conn;
 
-    public ChienLuocForm() {
+    public QuanLyTruyenThong() {
         setTitle("Quản lý Chiến Lược Truyền Thông");
         setSize(900, 600);
         setLocationRelativeTo(null);
