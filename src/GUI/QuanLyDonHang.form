@@ -171,9 +171,12 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-40" y="-10" width="-1" height="-1"/>
+          <AbsoluteConstraints x="-10" y="0" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

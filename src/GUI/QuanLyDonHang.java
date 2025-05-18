@@ -88,7 +88,12 @@ public class QuanLyDonHang extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\b5190600-569b-4a1a-b7bf-261505b401a0.png")); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, -1, -1));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,6 +101,10 @@ public class QuanLyDonHang extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
