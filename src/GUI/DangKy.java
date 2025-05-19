@@ -74,7 +74,7 @@ public class DangKy extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\dangnhap22.jpg")); // NOI18N
         jLabel8.setText("jLabel8");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-630, -310, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, -300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
