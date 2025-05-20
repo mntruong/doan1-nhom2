@@ -91,7 +91,6 @@ public class ThongKeDoanhThu extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 540, 316));
 
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\ưeqweqweqeqw.png")); // NOI18N
-        jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, -60, -1, -1));
 
         pack();

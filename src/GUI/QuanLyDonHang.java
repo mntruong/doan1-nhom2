@@ -75,19 +75,18 @@ public class QuanLyDonHang extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 406, 291));
 
         jButton2.setText("Thêm");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 80, -1));
 
         jButton3.setText("Sửa");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 80, -1));
 
         jButton4.setText("Xóa");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 70, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 80, -1));
 
         jButton5.setText("Làm mới");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 70, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 80, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\b5190600-569b-4a1a-b7bf-261505b401a0.png")); // NOI18N
-        jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, -1, -1));
 
         pack();
