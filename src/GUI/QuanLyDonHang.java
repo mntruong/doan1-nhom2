@@ -28,14 +28,14 @@ public class QuanLyDonHang extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        tfFind = new javax.swing.JTextField();
+        btFind = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btAdd = new javax.swing.JButton();
+        btChange = new javax.swing.JButton();
+        btDelete = new javax.swing.JButton();
+        btRefesh = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,17 +46,17 @@ public class QuanLyDonHang extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
 
         jLabel2.setText("Nhập mã đơn hàng để tìm kiếm :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfFindActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 134, -1));
+        getContentPane().add(tfFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 190, -1));
 
-        jButton1.setText("Tìm");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 61, -1));
+        btFind.setText("Tìm");
+        getContentPane().add(btFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 70, -1));
 
         jTable1.setBackground(new java.awt.Color(255, 153, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -72,30 +72,30 @@ public class QuanLyDonHang extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 406, 291));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 170, 450, 291));
 
-        jButton2.setText("Thêm");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, -1, -1));
+        btAdd.setText("Thêm");
+        getContentPane().add(btAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 80, -1));
 
-        jButton3.setText("Sửa");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, -1, -1));
+        btChange.setText("Sửa");
+        getContentPane().add(btChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 80, -1));
 
-        jButton4.setText("Xóa");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 70, -1));
+        btDelete.setText("Xóa");
+        getContentPane().add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 80, -1));
 
-        jButton5.setText("Làm mới");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 70, -1));
+        btRefesh.setText("Làm mới");
+        getContentPane().add(btRefesh, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 80, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\b5190600-569b-4a1a-b7bf-261505b401a0.png")); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFindActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfFindActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,16 +133,16 @@ public class QuanLyDonHang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btAdd;
+    private javax.swing.JButton btChange;
+    private javax.swing.JButton btDelete;
+    private javax.swing.JButton btFind;
+    private javax.swing.JButton btRefesh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField tfFind;
     // End of variables declaration//GEN-END:variables
 }
