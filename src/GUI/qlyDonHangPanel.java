@@ -27,31 +27,33 @@ public class qlyDonHangPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        tfFind = new javax.swing.JTextField();
-        btFind = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btAdd = new javax.swing.JButton();
-        btChange = new javax.swing.JButton();
-        btDelete = new javax.swing.JButton();
-        btRefesh = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("QUẢN LÝ ĐƠN HÀNG");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 60, -1, -1));
 
-        jLabel2.setText("Nhập mã đơn hàng để tìm kiếm :");
-
-        tfFind.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfFindActionPerformed(evt);
-            }
-        });
-
-        btFind.setText("Tìm");
-
-        jTable1.setBackground(new java.awt.Color(255, 153, 153));
+        jTable1.setBackground(new java.awt.Color(255, 255, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -65,96 +67,71 @@ public class qlyDonHangPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        btAdd.setText("Thêm");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 329, 711, 343));
 
-        btChange.setText("Sửa");
+        jLabel3.setText("Mã đơn hàng:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 140, -1, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(488, 137, 100, -1));
 
-        btDelete.setText("Xóa");
+        jLabel5.setText("Tên đơn hàng:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 174, -1, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 171, 103, -1));
 
-        btRefesh.setText("Làm mới");
+        jLabel6.setText("Tên khách đặt:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 140, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\b5190600-569b-4a1a-b7bf-261505b401a0.png")); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel7.setText("Ngày đặt:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 174, -1, -1));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(711, 137, 100, -1));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(711, 171, 100, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1065, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(350, 350, 350)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(220, 220, 220)
-                            .addComponent(jLabel2)
-                            .addGap(5, 5, 5)
-                            .addComponent(tfFind, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(btFind, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(216, 216, 216)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(34, 34, 34)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btChange, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btRefesh, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabel4))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addComponent(jLabel1)
-                            .addGap(68, 68, 68)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(tfFind, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btFind))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(50, 50, 50)
-                                    .addComponent(btAdd)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btChange)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btDelete)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btRefesh))))
-                        .addComponent(jLabel4))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jButton1.setText("Thêm");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 220, -1, -1));
+
+        jLabel8.setText("Nhập mã đơn hàng:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 292, -1, -1));
+        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 289, 100, -1));
+
+        jButton2.setText("Tìm kiếm");
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 289, -1, -1));
+
+        jButton3.setText("Sửa");
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 722, -1, -1));
+
+        jButton4.setText("Xóa");
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 722, -1, -1));
+
+        jButton5.setText(">");
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 678, -1, -1));
+
+        jButton6.setText("<");
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 678, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\donhangtest3.jpg")); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-240, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tfFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFindActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfFindActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAdd;
-    private javax.swing.JButton btChange;
-    private javax.swing.JButton btDelete;
-    private javax.swing.JButton btFind;
-    private javax.swing.JButton btRefesh;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField tfFind;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

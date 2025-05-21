@@ -40,37 +40,46 @@ public class DangNhap extends javax.swing.JFrame {
         tf_username = new javax.swing.JTextField();
         tf_password = new javax.swing.JPasswordField();
         bt_login = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 153, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(204, 51, 255));
+        jLabel1.setBackground(new java.awt.Color(204, 204, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("ĐĂNG NHẬP");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, -1, 30));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 0));
         jLabel2.setText("Tên tài khoản:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, -1, -1));
 
-        jLabel3.setText("Mật Khẩu");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 75, 20));
-        getContentPane().add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 122, -1));
-        getContentPane().add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 122, -1));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel3.setText("Mật Khẩu:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 75, 20));
 
+        tf_username.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 160, -1));
+
+        tf_password.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 160, -1));
+
+        bt_login.setBackground(new java.awt.Color(204, 0, 0));
+        bt_login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_login.setForeground(new java.awt.Color(204, 204, 0));
         bt_login.setText("Đăng Nhập");
         bt_login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_loginMouseClicked(evt);
             }
         });
-        getContentPane().add(bt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 120, -1));
-
-        jButton2.setText("Chào mừng đến với phần mềm quản lý");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 250, 30));
+        getContentPane().add(bt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, 110, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,9 +94,13 @@ public class DangNhap extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 345, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\8c4b0d73-5bf7-4756-9519-1241242.png")); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -110, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel5.setText("Chào mừng đến với phần mềm quản lý !");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 780, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\doan1-nhom2\\src\\img\\dangnhaptest1.jpg")); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,11 +181,11 @@ public class DangNhap extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_login;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField tf_password;
     private javax.swing.JTextField tf_username;
