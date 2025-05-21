@@ -5,6 +5,9 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +20,20 @@ public class TrangChuqlch extends javax.swing.JFrame {
      */
     public TrangChuqlch() {
         initComponents();
+        btDangxuat.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                logout();
+            }
+        });
+    }
+    
+    private void logout(){
+        int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            this.dispose();
+            new DangNhap().setVisible(true);
+        }
     }
 
     /**
@@ -54,6 +71,11 @@ public class TrangChuqlch extends javax.swing.JFrame {
         btTrangchu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btTrangchu.setForeground(new java.awt.Color(204, 204, 0));
         btTrangchu.setText("Trang Chủ");
+        btTrangchu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btTrangchuMouseClicked(evt);
+            }
+        });
 
         btDonhang.setBackground(new java.awt.Color(51, 0, 0));
         btDonhang.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -100,6 +122,11 @@ public class TrangChuqlch extends javax.swing.JFrame {
         btTruyenthong.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btTruyenthong.setForeground(new java.awt.Color(204, 204, 0));
         btTruyenthong.setText("QL Truyền Thông");
+        btTruyenthong.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btTruyenthongMouseClicked(evt);
+            }
+        });
 
         btDoanhthu.setBackground(new java.awt.Color(51, 0, 0));
         btDoanhthu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -248,6 +275,20 @@ public class TrangChuqlch extends javax.swing.JFrame {
         maincontent.revalidate();
         maincontent.repaint();
     }//GEN-LAST:event_btDoanhthuMouseClicked
+
+    private void btTrangchuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btTrangchuMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btTrangchuMouseClicked
+
+    private void btTruyenthongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btTruyenthongMouseClicked
+        // TODO add your handling code here:
+        maincontent.removeAll();
+        maincontent.setLayout(new BorderLayout());
+        maincontent.add(new qlyTruyenThongPanel(), BorderLayout.CENTER);
+        maincontent.revalidate();
+        maincontent.repaint();
+    }//GEN-LAST:event_btTruyenthongMouseClicked
 
     /**
      * @param args the command line arguments

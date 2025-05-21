@@ -124,6 +124,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Trang Ch&#x1ee7;"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btTrangchuMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btDonhang">
           <Properties>
@@ -207,6 +210,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="QL Truy&#x1ec1;n Th&#xf4;ng"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btTruyenthongMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btDoanhthu">
           <Properties>

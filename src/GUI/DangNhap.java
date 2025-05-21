@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
+import ConnectDatabase.connectDatabase;
+import Model.*;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,9 +37,9 @@ public class DangNhap extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        tf_username = new javax.swing.JTextField();
+        tf_password = new javax.swing.JPasswordField();
+        bt_login = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -48,18 +54,23 @@ public class DangNhap extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, 30));
 
         jLabel2.setText("Tên tài khoản:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
         jLabel3.setText("Mật Khẩu");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 75, 20));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 122, -1));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 122, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 75, 20));
+        getContentPane().add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 122, -1));
+        getContentPane().add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 122, -1));
 
-        jButton1.setText("Đăng Nhập");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
+        bt_login.setText("Đăng Nhập");
+        bt_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_loginMouseClicked(evt);
+            }
+        });
+        getContentPane().add(bt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 120, -1));
 
-        jButton2.setText("Nếu chưa có tài khoản, đăng ký tại đây.");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, 30));
+        jButton2.setText("Chào mừng đến với phần mềm quản lý");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 250, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,6 +91,45 @@ public class DangNhap extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_loginMouseClicked
+        // TODO add your handling code here:
+        String username = tf_username.getText();
+        String password = new String(tf_password.getPassword());
+        try {
+            getData dataGetter = new getData();
+            int limit = 0;
+            boolean check = false;
+            ResultSet rs = dataGetter.getData("tk_nhanvien");
+            while (rs.next()) {                
+                String user = rs.getString("TenDangNhap"),
+                       pass = rs.getString("MatKhau");
+                if (username.equals(user) && password.equals(pass)) {
+                    check = true;
+                    break;
+                }else{
+                    limit = limit +1;
+                }
+            }
+            if (check) {
+                JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
+                limit = 0;
+                new TrangChuqlch().setVisible(true);
+                this.setVisible(false);
+            }else{
+                JOptionPane.showMessageDialog(null,"Sai tài khoản hoặc mật khẩu!!!(" + limit + "/3)");
+                if (limit >= 3) {
+                    JOptionPane.showMessageDialog(null, "Quá số lần đăng nhập!!!");
+                    System.exit(0);
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DangNhap.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(DangNhap.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_bt_loginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -117,14 +167,14 @@ public class DangNhap extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bt_login;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField tf_password;
+    private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 }
