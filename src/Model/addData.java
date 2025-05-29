@@ -37,7 +37,7 @@ public class addData {
         
         int rowInserted = ps.executeUpdate();
         if(rowInserted > 0){
-            JOptionPane.showMessageDialog(null, "Thêm dữ liệu thành công vào bảng");
+           
         }else{
             JOptionPane.showMessageDialog(null, "Không thể thêm dữ liệu vào bảng");
         }

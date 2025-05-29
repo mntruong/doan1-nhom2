@@ -6,6 +6,7 @@ package GUI;
 import ConnectDatabase.connectDatabase;
 import Model.*;
 import java.sql.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author ADMIN
  */
 public class DangNhap extends javax.swing.JFrame {
-
+    private int limit = 0;
     /**
      * Creates new form DangNhap
      */
@@ -98,17 +99,14 @@ public class DangNhap extends javax.swing.JFrame {
         String password = new String(tf_password.getPassword());
         try {
             getData dataGetter = new getData();
-            int limit = 0;
             boolean check = false;
-            ResultSet rs = dataGetter.getData("tk_nhanvien");
-            while (rs.next()) {                
-                String user = rs.getString("TenDangNhap"),
-                       pass = rs.getString("MatKhau");
+            List<String[]> result = dataGetter.getData("tk_nhanvien", new String[]{"TenDangNhap", "MatKhau"});
+            for (String[] row : result) {
+                String user = row[0];
+                String pass = row[1];
                 if (username.equals(user) && password.equals(pass)) {
                     check = true;
                     break;
-                }else{
-                    limit = limit +1;
                 }
             }
             if (check) {
@@ -117,6 +115,7 @@ public class DangNhap extends javax.swing.JFrame {
                 new TrangChuqlch().setVisible(true);
                 this.setVisible(false);
             }else{
+                limit = limit +1;
                 JOptionPane.showMessageDialog(null,"Sai tài khoản hoặc mật khẩu!!!(" + limit + "/3)");
                 if (limit >= 3) {
                     JOptionPane.showMessageDialog(null, "Quá số lần đăng nhập!!!");

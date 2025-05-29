@@ -5,6 +5,7 @@
 package Model;
 import ConnectDatabase.connectDatabase;
 import java.sql.*;
+import java.util.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,22 +13,38 @@ import javax.swing.JOptionPane;
  * @author ADMIN
  */
 public class deleteData {
-    public void deleteData(String tableName, String condition) throws ClassNotFoundException, SQLException{
+    public int delete(String tableName, String[] columns, Object[] values)
+            throws ClassNotFoundException, SQLException {
+
         connectDatabase cd = new connectDatabase();
         Connection conn = cd.getConnection();
-        
-        String sql = "delete from " + tableName + " where " + condition;
-        
-        PreparedStatement ps = conn.prepareStatement(sql);
-        
-        int rowDelete = ps.executeUpdate();
-        if(rowDelete > 0){
-            JOptionPane.showMessageDialog(null, "Xóa dữ liệu thành công trong bảng");
-        }else{
-             JOptionPane.showMessageDialog(null, "Không tìm thấy dữ liệu để xóa trong bảng ");
+
+        StringBuilder whereClause = new StringBuilder();
+        List<Object> parameters = new ArrayList<>();
+
+        for (int i = 0; i < columns.length; i++) {
+            Object value = values[i];
+            if (value != null && !value.toString().trim().isEmpty()) {
+                if (whereClause.length() > 0) {
+                    whereClause.append(" AND ");
+                }
+                whereClause.append(columns[i]).append(" = ?");
+                parameters.add(value);
+            }
         }
-        
-        ps.close();
-        conn.close();
+
+       
+        if (parameters.isEmpty()) {
+            return 0;
+        }
+
+        String sql = "DELETE FROM " + tableName + " WHERE " + whereClause.toString();
+        PreparedStatement ps = conn.prepareStatement(sql);
+
+        for (int i = 0; i < parameters.size(); i++) {
+            ps.setObject(i + 1, parameters.get(i)); 
+        }
+
+        return ps.executeUpdate();
     }
 }
